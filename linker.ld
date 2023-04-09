@@ -3,29 +3,28 @@ OUTPUT_FORMAT(binary)
 SECTIONS
 {
     . = 0x7e00;
-    .text :
+    .text : ALIGN(512)
     {
         *(.text)
     }
 
-    . = 0x8e00;
-    .rodata :
+    .rodata : ALIGN(512)
     {
         *(.rodata)
     }
 
-    .data :
+    .data : ALIGN(512)
     {
         *(.data)
     }
 
-    .bss :
+    .bss : ALIGN(512)
     {
         *(COMMON)
         *(.bss)
     }
 
-    .asm :
+    .asm : ALIGN(512)
     {
         *(.asm)
     }
