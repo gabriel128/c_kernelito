@@ -1,0 +1,14 @@
+display/16xw $esp
+display/x $eax
+display/x $ebx
+display/x $ecx
+display/x $edx
+display/x $edi
+display/x $esi
+display/x $ebp
+display/10i $eip
+target remote | qemu-system-i386 -hda ./bin/kernel.img -S -gdb stdio
+set architecture i386
+add-symbol-file ./.build/kernelfull.o 0x7e00
+b kmain
+continue
