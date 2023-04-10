@@ -2,6 +2,7 @@
 
 #include "common.h"
 
-#define RED 4
+static const size_t MAX_WIDTH = 80;
+static const size_t MAX_HEIGHT = 25;
 
-void vga_printstr(char *);
+void vga_printstr(char*);

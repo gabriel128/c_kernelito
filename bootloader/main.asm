@@ -61,7 +61,7 @@ after_pmode_switch:
     mov eax, 0x0b8000
     mov word [ds:eax], bx
 
-call_kernel
+call_kernel:
     jmp CODE_SEG:KERNEL_OFFSET
     ;; shouldn't reach here
     jmp $
